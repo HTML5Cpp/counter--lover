@@ -1,0 +1,297 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    
+}
+
+:root{
+    --Blanco: #fff;
+    --Negro: #201e1f;
+    --NegroT: rgba(32, 30, 31, 0.356);
+    --Gris: #e6e6e6;
+    --GrisDark: #cbcbcb;
+    --Obscuro: #292929;
+    --Mark: #636363;
+}
+body{
+    background-color: var(--Gris) !important;
+    font-family: 'Cabinet Grotesk', sans-serif !important;
+    color: var(--Negro);
+}
+
+h4{
+    font-size: clamp(0.8rem, 0.5rem + 2vw, 1rem);
+}
+p{
+    font-size: clamp(0.8rem, 0.5rem + 2vw, 1rem);
+}
+small{
+    font-size: clamp(0.8rem, 0.5rem + 2vw, 1rem);
+    font-weight: 400;
+}
+.d-flexx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .d-col{
+        flex-flow: column wrap;
+    }
+    .d-row{
+        flex-flow: row wrap;
+    }
+.genSize{
+    width: 100%;
+    height: 100%;
+}
+
+
+.general--container{
+    width: 100%;
+    height: 100vh;
+}
+    .principal--container{
+        width: 45%;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+    }
+        .grid--item{
+            background-color: var(--Blanco);
+            overflow: hidden;
+            
+            flex-flow: column nowrap;
+        }
+            .item01 {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                background-color: #FF8966;
+                color: var(--Blanco);
+            }
+            .item02 {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+                justify-content: space-between;
+                text-align: end;
+                background-color: #136F63;
+                color: var(--Blanco);
+            }
+                .item02 > *{
+                    width: 100%;
+                    height: fit-content;
+                    margin: 0;
+                }
+                    .item02 > h5{
+                        text-transform: uppercase;
+                        font-size: clamp(0.8rem, 0.5rem + 2vw, 1rem);
+                    }
+                    .item02 > div{
+                        text-transform: uppercase;
+                        font-size: clamp(4rem, 0.5rem + 5vw, 8rem);
+
+                        overflow: hidden;
+                        height: 80%;
+                    }
+
+            .item03 {
+                grid-column: 1 / 3;
+                grid-row: 2 / 4;
+                justify-content: space-between;
+                background-color: var(--Obscuro);
+                color: var(--Blanco);
+            }
+                .item03 > * {
+                    width: 100%;
+                    overflow: hidden;
+                }
+                .top--calendar{
+                    justify-content: space-between;
+                    height: 10%;
+                }
+                    .top--calendar > h4{
+                        margin: 0;
+                    }
+                    .pill--calendario{
+                        background-color: var(--Negro);
+                        color: var(--Blanco);
+                        /* border: solid 1px var(--GrisDark); */
+                        height: 100%;
+                        justify-content: space-between;
+                    }
+                        .pill--calendario > p{
+                            margin: 0;
+                        }
+                        #mes_calendario{
+                            text-transform: capitalize;
+                        }
+                        .vertical--bar{
+                            width: 1px;
+                            height: 70%;
+
+                            background-color: var(--Blanco);
+                        }
+                .bottom--calendar{
+                    height: 75%;
+
+                    justify-content: start;
+                    align-items: start;
+                    overflow: hidden;
+                }
+                    .week--days{
+                        width: 100%;
+                        height: calc(100% / 6);
+                        justify-content: space-between;
+                    }
+                        .day--container{
+                            width: calc(100% / 7);
+                            padding-inline: 0.2rem;
+                        }
+                            .day--container--inner{
+                                background-color: var(--Mark);
+                            }
+                                .day--container--inner > p{
+                                    margin: 0;
+                                }
+                    .week--container{
+                        width: 100%;
+                        height: calc(100% / 6);
+
+                    }
+                        .item--calendar{
+                            width: calc(100% / 7);
+                            aspect-ratio: 1/1;
+                            overflow: hidden;
+                            padding: 0.6rem;
+                    
+                        }
+                            .inner--item-calendar{
+
+                                aspect-ratio: 1/1;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                background-color: var(--Negro);
+                                color: var(--Blanco);
+                                border: solid 1px var(--Mark);
+                            }
+
+
+            .comon--counter{
+                justify-content: space-between;
+            }
+                .comon--counter > * {
+                    width: 100%;
+                    margin: 0;
+                }
+
+            .item04 {
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+                background-color: #F7717D;
+                color: var(--Blanco);
+            }
+                
+                        .counter--item{
+                            justify-content: start;
+                            align-items: baseline;
+                        }
+                        .counter--item > *{
+                            margin: 0;
+                        }
+                        .counter--item > h2{
+                            line-height: 0;
+                            font-size: clamp(2.5rem, 0.5rem + 2vw, 4rem);
+                        }
+
+
+            .item05 {
+                grid-column: 3 / 4;
+                grid-row: 2 / 3;
+                background-color: #16001E;
+                color: var(--Blanco);
+            }
+            .item06 {
+                grid-column: 3 / 4;
+                grid-row: 3 / 4;
+                background-color: #85C7F2;
+                
+            }
+
+
+@media(max-width:767px){
+    .principal--container{
+        width: 95%;
+        height:98%;
+        aspect-ratio: none;
+        overflow: hidden;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 0.5rem;
+    }
+    .item01 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: none;
+    }
+    .item02 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .item03 {
+        grid-column: 1 / 3;
+        grid-row: 3 / 6;
+    }
+    .item04 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .item05 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    .item06 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    .top--calendar{
+        height: 10% !important;
+    }
+
+    .bottom--calendar{
+        height: 80%;
+    }
+}
+
+@media (max-width: 1080px){
+    .top--calendar{
+        justify-content: space-between;
+        height: 15%;
+    }
+
+    .bottom--calendar{
+        height: 80%;
+    }
+
+            .day--container{
+                width: calc(100% / 7);
+                padding-inline: 0rem;
+            }
+
+            .item--calendar{
+                padding: 0.2rem;
+            }
+}
+
+@media(max-width:1024px){
+
+}
+
+@media(max-width:960px){
+
+}
