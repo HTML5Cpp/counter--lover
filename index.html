@@ -245,10 +245,13 @@
         });
 
         
-        /* ScrollReveal().reveal('.card-01', {origin:'left'}); */
         ScrollReveal().reveal('.separete--counter', {origin:'top', delay: 200, interval: 500 });
         ScrollReveal().reveal('.CSI--01', {origin:'left' });
-        ScrollReveal().reveal('.CSI--02', {origin:'bottom' });
+        
+        if (window.innerWidth > 767) {
+            ScrollReveal().reveal('.CSI--02', {origin:'bottom'});
+        }
+
 
         ScrollReveal().reveal('.card-02', {origin:'left', duration: 1500 });
         ScrollReveal().reveal('.card-03', {origin:'left' , duration: 2000 });
