@@ -1,6 +1,3 @@
-
-
-
 function calcularTiempoDesde(fechaInicio) {
 
     const fechaInicial = new Date(fechaInicio);
@@ -131,30 +128,33 @@ function esese(){
 function obtenerFechaActual() {
     const fechaActual = new Date();
 
-    const diasSemana = [
-        "dom", "lun", "mar", "mie", "jue", "vie", "sab"
-    ];
-
+    const diasSemanaArr = ["dom", "lun", "mar", "mie", "jue", "vie", "sab"];
     const mesesAño = [
         "enero", "febrero", "marzo", "abril", "mayo", "junio",
         "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
     ];
-
-    const diaSemana = diasSemana[fechaActual.getDay()];
-    const diaMes = fechaActual.getDate();
+    
+    const diaSemana = diasSemanaArr[fechaActual.getDay()];
+    const hoy = fechaActual.getDate();
     const mes = mesesAño[fechaActual.getMonth()];
     const año = fechaActual.getFullYear();
-
-
-    let mes_date = document.getElementById('mes_date');
-    mes_date.innerText = mes;
-    let year_date = document.getElementById('year_date');
-    year_date.innerText = año;
-    /* let dia_semana = document.getElementById('dia_semana');
-    dia_semana.innerText = diaSemana;
-    let numero_dia = document.getElementById('numero_dia');
-    numero_dia.innerText = diaMes; */
-
+    
+    document.getElementById('mes_date').innerText = mes;
+    document.getElementById('year_date').innerText = año;
+    document.getElementById('dia_nombre').innerText = diaSemana;
+    document.getElementById('dia_numero').innerText = hoy;
+    
+    // Ayer
+    const fechaAyer = new Date(fechaActual);
+    fechaAyer.setDate(hoy - 1);
+    document.getElementById('ayer_nombre').innerText = diasSemanaArr[fechaAyer.getDay()];
+    document.getElementById('ayer_numero').innerText = fechaAyer.getDate();
+    
+    // Mañana
+    const fechaTomorrow = new Date(fechaActual);
+    fechaTomorrow.setDate(hoy + 1);
+    document.getElementById('tomorrow_nombre').innerText = diasSemanaArr[fechaTomorrow.getDay()];
+    document.getElementById('tomorrow_numero').innerText = fechaTomorrow.getDate();
 }
 obtenerFechaActual();
 
